@@ -225,4 +225,4 @@ createGrid();
 
 default_qc_file = 'data/QC-fluoride_free.json';
 fetch(default_qc_file)
-    .then(response => {loadQCFile(response);});
+    .then(response => {qc_results = JSON.parse(response);});
