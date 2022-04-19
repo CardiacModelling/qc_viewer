@@ -28,9 +28,9 @@
 
         <!-- file input field -->
         <input type="file"
-               id="avatar" name="avatar"
-               accept=".json" value="data/QC-fluoride_free.json",
-               onchange="loadQCFile(event)">
+               id="qc_file_selection"
+               accept=".json"
+               onchange="onQCFileSelect(event)">
         <!-- <input onclick="loadQCFile"
              type="button"
              value="Load file">

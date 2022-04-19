@@ -59,9 +59,12 @@ function createGrid(){
     }
 }
 
-function loadQCFile(e){
+function onQCFileSelect(e){
     f = e.target.files[0];
+    loadQCFile(f);
+}
 
+function loadQCFile(f){
     reader = new FileReader();
 
     reader.addEventListener("load", () => {
@@ -219,3 +222,7 @@ function updateViewer(){
 }
 
 createGrid();
+
+default_qc_file = 'data/QC-fluoride_free.json';
+fetch(default_qc_file)
+    .then(response => {loadQCFile(response);});
