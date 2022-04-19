@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>QC Viewer</title>
+        <meta name="description" content="">
+        <meta name="author" content="SitePoint">
+
+        <meta property="og:title" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="image.png">
+
+        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <link rel="stylesheet" href="main.css">
+
+    </head>
+
+    <body>
+
+        <table id='qc_grid'></table>
+
+        <!-- file input field -->
+        <input type="file"
+               id="avatar" name="avatar"
+               accept=".json" value="data/QC-fluoride_free.json",
+               onchange="loadQCFile(event)">
+        <!-- <input onclick="loadQCFile"
+             type="button"
+             value="Load file">
+        -->
+        <div>
+        <select name="protocol" id="protocol_selection", onchange="updateViewer(event)">
+            <option value="select protocol">select protocol</option>
+        </select>
+        </div>
+
+        <div id="criteria_div">
+        <div id="passing_criteria_selection">
+        </div>
+        <div id="ignore_criteria_selection">
+        </div>
+        </div>
+
+        <!-- your content here... -->
+        <script src="scripts/viewer.js"></script>
+    </body>
+</html>
