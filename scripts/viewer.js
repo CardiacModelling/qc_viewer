@@ -224,7 +224,7 @@ function updateViewer(){
 createGrid();
 
 default_qc_file = '/qc_viewer/data/QC-fluoride_free.json';
-fetch(default_qc_file).text().then(response => {
+fetch(default_qc_file).then(response => {
     text = response.text();
     console.log(text);
     qc_results = JSON.parse(text);});
