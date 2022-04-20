@@ -83,7 +83,11 @@ function updateProtocolList(){
 
     selection = document.getElementById('protocol_selection');
 
-    selection.options = [];
+    // remove options
+    while(selection.options.length > 0){
+        selection.remove(0);
+    }
+
     protocols.forEach(function f(x){
         option = new Option(x, 'protocol_' + x);
         option.value = x;
