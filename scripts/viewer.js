@@ -196,7 +196,7 @@ function updateViewer(){
         var ignore = false;
         for(j in ignore_criteria){
             criterium = ignore_criteria[j];
-            if (qc_row[criterium] == "False"){
+            if (qc_row[criterium].toLowerCase() == "false"){
                 ignore = true;
                 break;
             }
@@ -210,7 +210,7 @@ function updateViewer(){
             var fail = false;
             for(j in criteria_to_pass){
                 criterium = criteria_to_pass[j];
-                if (qc_row[criterium] == "False"){
+                if (qc_row[criterium].toLowerCase() == "false"){
                     fail = true;
                     break;
                 }
