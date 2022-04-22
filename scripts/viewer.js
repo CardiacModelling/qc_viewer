@@ -96,14 +96,13 @@ function updateProtocolList(){
 }
 
 function updateCriteria(){
+    // passing_criteria_container = document.getElementById("passing_criteria_selection");
+    // ignore_criteria_container = document.getElementById("ignore_criteria_selection");
+    // passing_criteria_container.style['display'] = 'block';
+    // ignore_criteria_container.style['display'] = 'block';
+
     passing_criteria_selection_div = document.getElementById("passing_criteria_selection");
     ignore_criteria_selection_div = document.getElementById("ignore_criteria_selection");
-
-    passing_criteria_selection_div.style['display'] = 'block';
-    passing_criteria_selection_div.innerHTML = "Show which wells fail any of the criteria:";
-
-    ignore_criteria_selection_div.style['display'] = 'block';
-    ignore_criteria_selection_div.innerHTML = "Grey-out wells which fail any of the criteria:";
 
     keys = Object.keys(qc_results[0]);
 
@@ -118,7 +117,7 @@ function updateCriteria(){
 
         var input = document.createElement("input");
         input.type = "checkbox";
-        input.className = "css-critiera_selection_radio"; // set the CSS class
+        input.className = "criteria_selection_box"; // set the CSS class
         input.id = 'show_' + criterium;
         input.value = 'show_' + criterium;
         input.onclick= function f(){updateViewer()};
@@ -136,7 +135,7 @@ function updateCriteria(){
         input.type = "checkbox";
         input.value = 'ignore_' + criterium;
         input.id = 'ignore_' + criterium;
-        input.className = "css-critiera_ignore_radio"; // set the CSS class
+        input.className = "criteria_ignore_box"; // set the CSS class
         input.onclick = function f(){updateViewer()};
         div.appendChild(input); // put it into the DOM
 
@@ -223,6 +222,35 @@ function updateViewer(){
             }
         }
     }
+}
+
+function selectAllPassing(){
+    var checkboxes = document.getElementsByClassName("criteria_selection_box");
+    for(i in checkboxes){
+        checkboxes[i].checked = true;
+    }
+    updateViewer();
+}
+
+function selectAllIgnore(){
+    var checkboxes = document.getElementsByClassName("criteria_ignore_box");
+    for(i in checkboxes)
+        checkboxes[i].checked = true;
+    updateViewer();
+}
+
+function clearPassingSelection(){
+    var checkboxes = document.getElementsByClassName("criteria_selection_box");
+    for(i in checkboxes)
+        checkboxes[i].checked = false;
+    updateViewer();
+}
+
+function clearIgnoreSelection(){
+    var checkboxes = document.getElementsByClassName("criteria_ignore_box");
+    for(i in checkboxes)
+        checkboxes[i].checked = false;
+    updateViewer();
 }
 
 createGrid();

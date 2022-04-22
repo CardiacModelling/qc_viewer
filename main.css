@@ -2518,21 +2518,19 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
-#passing_criteria_selection {
+#passing_criteria_container {
   float: left;
   width: 45%;
   background-color: #90ee90;
-  display: none;
   padding: 10px;
   border-radius: 10px; }
 
-#ignore_criteria_selection {
+#ignore_criteria_container {
   float: right;
   width: 45%;
   background-color: #eee4da;
   padding: 10px;
-  border-radius: 10px;
-  display: none; }
+  border-radius: 10px; }
 
 #criteria_div {
   width: 500px; }

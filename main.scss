@@ -534,22 +534,20 @@ hr {
   }
 }
 
-#passing_criteria_selection{
+#passing_criteria_container{
     float: left;
     width: 45%;
     background-color: #90ee90;
-    display: none;
     padding: 10px;
     border-radius: 10px;
 }
 
-#ignore_criteria_selection{
+#ignore_criteria_container{
     float: right;
     width: 45%;
     background-color: #eee4da;
     padding: 10px;
     border-radius: 10px;
-    display: none;
 }
 
 #criteria_div{

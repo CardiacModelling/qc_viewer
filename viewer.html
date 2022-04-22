@@ -42,9 +42,19 @@
         </div>
 
         <div id="criteria_div">
+        <div id="passing_criteria_container">
+            <p>Show which wells fail any of the criteria: </p>
         <div id="passing_criteria_selection">
         </div>
+        <input type="button" onclick="clearPassingSelection()" value="deselect all">
+        <input type="button" onclick="selectAllPassing()" value="select all">
+        </div>
+        <div id="ignore_criteria_container">
+            <p> Grey-out wells which fail any of the criteria: </p>
         <div id="ignore_criteria_selection">
+        </div>
+        <input type="button" onclick="clearIgnoreSelection()" value="deselect all">
+        <input type="button" onclick="selectAllIgnore()" value="select all">
         </div>
         </div>
 
