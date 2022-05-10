@@ -263,7 +263,6 @@ function clearIgnoreSelection(){
 }
 
 createGrid();
-updateViewer();
 
 default_qc_file = '/qc_viewer/data/QC-fluoride_free.json';
 fetch(default_qc_file).then(r => r.json()).then(r => {qc_results = r;
