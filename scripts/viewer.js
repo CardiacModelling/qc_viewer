@@ -96,13 +96,11 @@ function updateProtocolList(){
 }
 
 function updateCriteria(){
-    // passing_criteria_container = document.getElementById("passing_criteria_selection");
-    // ignore_criteria_container = document.getElementById("ignore_criteria_selection");
-    // passing_criteria_container.style['display'] = 'block';
-    // ignore_criteria_container.style['display'] = 'block';
-
     passing_criteria_selection_div = document.getElementById("passing_criteria_selection");
     ignore_criteria_selection_div = document.getElementById("ignore_criteria_selection");
+
+    passing_criteria_selection_div.innerHTML = '';
+    ignore_criteria_selection_div.innerHTML = '';
 
     keys = Object.keys(qc_results[0]);
 
