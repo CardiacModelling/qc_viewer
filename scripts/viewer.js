@@ -39,7 +39,7 @@ function createGrid(){
 
     for (i = 0; i < 24; i++){
         var cell = row.insertCell();
-        cell.innerHTML = i + 1;
+        cell.innerHTML = String(Math.floor((i + 1)/10)) + String((i + 1)% 10);
         cell.class = "qc_grid_column_labels";
     }
 
