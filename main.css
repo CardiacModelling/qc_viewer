@@ -2533,7 +2533,11 @@ hr {
   border-radius: 10px; }
 
 #criteria_div {
-  width: 500px; }
+  width: 500px;
+  float: right; }
+
+#left_column {
+  float: left; }
 
 .checkbox_option {
   display: block; }

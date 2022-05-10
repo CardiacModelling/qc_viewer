@@ -23,7 +23,8 @@
     </head>
 
     <body>
-
+        <div style="display: flex; flexwrap: wrap">
+        <div id="left_column">
         <table id='qc_grid'></table>
 
         <!-- file input field -->
@@ -40,7 +41,7 @@
             <option value="select protocol">select protocol</option>
         </select>
         </div>
-
+        </div>
         <div id="criteria_div">
         <div id="passing_criteria_container">
             <p>Show which wells fail any of the criteria: </p>
@@ -57,7 +58,7 @@
         <input type="button" onclick="selectAllIgnore()" value="select all">
         </div>
         </div>
-
+        </div>
         <!-- your content here... -->
         <script src="scripts/viewer.js"></script>
     </body>
