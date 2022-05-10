@@ -2533,11 +2533,13 @@ hr {
   border-radius: 10px; }
 
 #criteria_div {
-  width: 500px;
-  float: right; }
-
-#left_column {
-  float: left; }
+  width: 500px; }
 
 .checkbox_option {
   display: block; }
+
+#success-rate-div {
+  display: block;
+  background: #00ffef;
+  padding: 10px;
+  border-radius: 10px; }

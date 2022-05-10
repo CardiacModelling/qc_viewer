@@ -180,6 +180,9 @@ function updateViewer(){
         }
     }
 
+    no_wells = 0;
+    no_wells_passing = 0;
+
     for(i in qc_results){
         qc_row = qc_results[i];
 
@@ -217,9 +220,17 @@ function updateViewer(){
             }
             else{
                 tile.style.background='green';
+                no_wells_passing += 1;
             }
+            no_wells += 1;
         }
     }
+
+    passing_element = document.getElementById('no_wells_passing');
+    passing_element.innerHTML = no_wells_passing;
+
+    no_wells_element = document.getElementById('no_wells');
+    no_wells_element.innerHTML = no_wells;
 }
 
 function selectAllPassing(){
@@ -252,6 +263,7 @@ function clearIgnoreSelection(){
 }
 
 createGrid();
+updateViewer();
 
 default_qc_file = '/qc_viewer/data/QC-fluoride_free.json';
 fetch(default_qc_file).then(r => r.json()).then(r => {qc_results = r;
