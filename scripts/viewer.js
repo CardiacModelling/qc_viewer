@@ -218,11 +218,11 @@ function updateViewer(){
                 }
             }
             if(fail){
-                tile.style.background='#4daf4a';
+                tile.style.background='#e41a1c';
                 failed_wells.push(well);
             }
             else{
-                tile.style.background='#e41a1c';
+                tile.style.background='#4daf4a';
                 no_wells_passing += 1;
                 passed_wells.push(well);
             }
