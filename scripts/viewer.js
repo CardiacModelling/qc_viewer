@@ -182,6 +182,8 @@ function updateViewer(){
 
     no_wells = 0;
     no_wells_passing = 0;
+    passed_wells = []
+    failed_wells = []
 
     for(i in qc_results){
         qc_row = qc_results[i];
@@ -216,11 +218,13 @@ function updateViewer(){
                 }
             }
             if(fail){
-                tile.style.background='red';
+                tile.style.background='#4daf4a';
+                failed_wells.push(well);
             }
             else{
-                tile.style.background='green';
+                tile.style.background='#e41a1c';
                 no_wells_passing += 1;
+                passed_wells.push(well);
             }
             no_wells += 1;
         }
@@ -231,6 +235,12 @@ function updateViewer(){
 
     no_wells_element = document.getElementById('no_wells');
     no_wells_element.innerHTML = no_wells;
+
+    passed_wells_element = document.getElementById('passed_wells');
+    failed_wells_element = document.getElementById('failed_wells');
+    passed_wells_element.innerHTML = passed_wells.join(' ');
+    failed_wells_element.innerHTML = failed_wells.join(' ');
+
 }
 
 function selectAllPassing(){
